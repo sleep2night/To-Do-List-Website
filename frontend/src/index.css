@@ -13,6 +13,9 @@
   -moz-osx-font-smoothing: grayscale;
 } */
 
+body{
+  background-color: hsl(260, 15%, 18%);
+}
 .to-do-list{
   font-family: Arial, sans-serif;
   text-align: center;
@@ -21,6 +24,7 @@
 
 h1{
   font-size: 4rem;
+  color: white;
 }
 
 button{
@@ -31,7 +35,7 @@ button{
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.5 ease;
+  transition: background-color 0.5s ease;
 }
 
 .add-button{
@@ -49,4 +53,45 @@ button{
 .delete-button:hover{
   background-color: hsl(0, 80%, 45%);
   
+}
+
+.move-button{
+  background-color: hsl(40, 100%, 50%);
+}
+
+.move-button:hover{
+  background-color: hsl(40, 100%, 40%);
+}
+
+input[type="text"]{
+  font-size: 1.6rem;
+  padding: 10px;
+  border: 2px solid hsla(0, 0%, 80%, 0.5);
+  border-radius: 5px;
+  color: black
+}
+
+ol{
+  padding: 0;
+}
+li{
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 15px;
+  background-color: hsl(0, 0%, 80%);
+  margin-bottom: 10px;
+  border: 3px solid hsl(0, 0%, 60%, 0.75);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.text{
+  flex: 1;
+}
+
+.delete-button, .move-button{
+  padding: 8px 12px; 
+  font-size: 1.4rem;
+  margin-left: 10px;
 }
