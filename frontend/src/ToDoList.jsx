@@ -9,19 +9,36 @@ function ToDoList(){
     }
 
     function addTask(){
-        console.log("Task has been added.")
+        if(newTask.trim() !== ""){
+            console.log("Task has been added.");
+            setTasks(t => [...t, newTask]);
+            setNewTask("");
+        }
     }
 
     function deleteTask(index){
-        console.log("Task has been deleted.")
+        console.log("Task has been deleted.");
+        const updatedTasks = tasks.filter((_, i) => i !== index);
+        setTasks(updatedTasks);
     }
 
     function moveTaskUp(index){
-        console.log("Task has been moved up.")
+        if(index > 0){
+            console.log("Task has been moved up.");
+            const updatedTasks = [...tasks];
+            [updatedTasks[index], updatedTasks[index-1]] = [updatedTasks[index-1],updatedTasks[index]];
+            setTasks(updatedTasks);
+        }
+        
     }
 
     function moveTaskDown(index){
-        console.log("Task has been moved down.")
+        if(index < tasks.length - 1){
+            console.log("Task has been moved down.");
+            const updatedTasks = [...tasks];
+            [updatedTasks[index], updatedTasks[index+1]] = [updatedTasks[index + 1],updatedTasks[index]];
+            setTasks(updatedTasks);
+        }
     }
 
     return (
