@@ -1,11 +1,17 @@
 import React, { useState } from 'react'
 
 function ToDoList(){
-    const [tasks, setTasks] = useState(["Exercise", "Code something", "Sleep around 12"]);
+    const [tasks, setTasks] = useState([]);
     const [newTask, setNewTask] = useState("");
     
     function handleInputChange(event){
         setNewTask(event.target.value);
+    }
+
+    function handleKeyDown(event){
+        if(event.key === 'Enter'){
+            addTask();
+        }
     }
 
     function addTask(){
@@ -50,6 +56,7 @@ function ToDoList(){
                 placeholder="Enter a task "
                 value = {newTask}
                 onChange={handleInputChange}
+                onKeyDown={handleKeyDown}
             />
             <button className="add-button" onClick={addTask}>
                 Add
