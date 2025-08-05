@@ -38,19 +38,20 @@ button{
   transition: background-color 0.5s ease;
 }
 
-.add-button{
+
+.blue-button, .save-button{
   background-color: hsl(210, 90%, 50%);
 }
 
-.add-button:hover{
+.blue-button:hover, .save-button:hover{
   background-color: hsl(210, 90%, 40%);
 }
 
-.delete-button{
+.red-button{
   background-color: hsl(0, 80%, 55%);
 }
 
-.delete-button:hover{
+.red-button:hover{
   background-color: hsl(0, 80%, 45%);
   
 }
@@ -68,7 +69,8 @@ input[type="text"]{
   padding: 10px;
   border: 2px solid hsla(0, 0%, 80%, 0.5);
   border-radius: 5px;
-  color: black
+  color: black;
+  text-align: center;
 }
 
 ol{
@@ -86,11 +88,16 @@ li{
   align-items: center;
 }
 
+/* Center the edit section when input is present */
+li:has(input[type="text"]) {
+  justify-content: center;
+}
+
 .text{
   flex: 1;
 }
 
-.delete-button, .move-button{
+.red-button, .move-button, .save-button{
   padding: 8px 12px; 
   font-size: 1.4rem;
   margin-left: 10px;

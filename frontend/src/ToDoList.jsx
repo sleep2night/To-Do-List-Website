@@ -80,7 +80,7 @@ function ToDoList(){
                 onChange={handleInputChange}
                 onKeyDown={handleKeyDown}
             />
-            <button className="add-button" onClick={addTask}>
+            <button className="blue-button" onClick={addTask}>
                 Add
             </button>
         </div>
@@ -97,24 +97,22 @@ function ToDoList(){
                                 if(e.key === 'Enter') saveEditedTask(index);
                             }}
                             />
+                            <button className="save-button" onClick={() => saveEditedTask(index)}>Save</button>
+                            <button className="red-button" onClick={() => cancelEdit(index)}>Cancel</button>
                         </>
                     ) : (
                         <>
-                            <button className="edit-button"
-                            onClick={() => startEditing(index)}>
+                            <button className="blue-button" onClick={() => startEditing(index)}>
                                 ✏️
                             </button>
                             <span className="text">{task}</span>
-                            <button className="move-button" 
-                            onClick={() => moveTaskUp(index)}>
+                            <button className="move-button" onClick={() => moveTaskUp(index)}>
                                 ⬆️
                             </button>
-                            <button className="move-button" 
-                            onClick={() => moveTaskDown(index)}>
+                            <button className="move-button" onClick={() => moveTaskDown(index)}>
                                 ⬇️
                             </button>
-                            <button className="delete-button" 
-                            onClick={() => deleteTask(index)}>
+                            <button className="red-button" onClick={() => deleteTask(index)}>
                                 🗑️
                             </button>
                         </>
