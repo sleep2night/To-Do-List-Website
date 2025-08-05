@@ -1,10 +1,29 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+
 
 function ToDoList(){
     const [tasks, setTasks] = useState([]);
     const [newTask, setNewTask] = useState("");
     const [editIndex, setEditIndex] = useState(null);
     const [editedTask, setEditedTask] = useState("");
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+        const savedTasks = localStorage.getItem('todoTasks');
+        console.log('Loading from localStorage:', savedTasks);
+        if(savedTasks) {
+            setTasks(JSON.parse(savedTasks));
+            console.log('Tasks loaded:', JSON.parse(savedTasks));
+        }
+        setIsLoaded(true);
+    }, []);
+
+    useEffect(() => {
+        if (isLoaded) {
+            console.log('Saving tasks to localStorage:', tasks);
+            localStorage.setItem('todoTasks', JSON.stringify(tasks));
+        }
+    }, [tasks, isLoaded]);
 
     function handleInputChange(event){
         setNewTask(event.target.value);
