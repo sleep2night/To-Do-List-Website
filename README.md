@@ -1,5 +1,5 @@
 # To Do List Website
-Simple Todo List built with React and Vite
+Simple To Do List built with React and Vite
 
 ## Features
 - Add, edit, or delete tasks
