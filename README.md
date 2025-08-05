@@ -1,3 +1,3 @@
 # todo_list_website
-cd frontend
+cd frontend  
 npm run dev
