@@ -1,4 +1,4 @@
-# todo_list_website
+# To Do List Website
 Simple Todo List built with React and Vite
 
 ## Features
