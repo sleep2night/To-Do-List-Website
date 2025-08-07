@@ -12,3 +12,5 @@ Simple To Do List built with React and Vite
 3. Install dependencies: `npm install`
 4. Start the development server: `npm run dev`
 5. Open your browser and visit `http://localhost:5173`
+
+To access the website: [Click on this link](https://sleep2night.github.io/To-Do-List-Website)
